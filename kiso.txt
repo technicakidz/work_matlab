@@ -1,0 +1,43 @@
+2017/7/27
+”MATLABによる機械学習の基礎”
+
+音声認識（母音認識の例
+特徴抽出Yule-Walker
+FFTを通すと波形がギザギザ
+周波数のピーク値がわかりにくい
+→第１，２フォルマント(特徴量)を訓練データを基に分類
+ARmodel
+knnで識別（多数決採決式
+
+matlabによる実装
+--
+初期化コマンド
+`
+clear
+close all
+`
+録音コマンド
+record voice from mic関数
+
+break point機能
+
+find peaks(,ピーク指定)
+
+エクセルファイルの読み込み
+readtable(.csv)
+
+分類器 : d = fitcknn(X特徴量, Tラベル, ´NumNeighbors´, 4データで使う近傍数)
+予測 : C = predict(d,Y新しい特徴量)
+--
+
+分類is like多項式回帰
+
+lda説明
+
+データ量の増加=計算量の増加 の問題に有効
+原理：各グループを分散が等しい正規分布で近似できると仮定
+＝直線で分類できる
+２次判別分類器
+山の境界を2次曲線で表現し分類
+類器 : d = fitcdiscr(X特徴量, Tラベル, ´DiscrimType´, ´linear or quadratic´)
+予測 : C = predict(d,Y新しい特徴量)
