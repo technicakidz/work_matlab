@@ -23,3 +23,22 @@ SHMTools
 何個
 どんな前処理（統計処理）
 どんな分類器（識別器）
+
+主成分分析
+[coeff,score,latent] = pca(x)
+>>pca(data,features)
+
+相関図出力する関数
+>>imagesc()
+
+決定木decision tree
+・変数ひとつ選び閾値決めてサンプル２つ分ける
+・なるべく同じクラス同士が同じグループに入る様にしたい
+・混ざり具合の基準(Gini係数など)を使う
+
+1クラスSVM（外れ値検出）学習
+>>X = data.Features;　%%特徴量データ
+>>W = ones(size(X,1),1); %%教師なしなのでラベル１
+>>d = fitsvm(X,W,kernelScale,auto,Standardize,true,Outlier,0.02); %%外れ値の割合オプション
+異常検知
+
